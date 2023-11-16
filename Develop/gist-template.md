@@ -1,10 +1,10 @@
-# Title (replace with your title)
+# Matching a URL - Regex Tutorial
 
-Introductory paragraph (replace this with your text)
+This ReadME document provides a detailed explanation of the URL matching regular expression (regex).
 
 ## Summary
 
-Briefly summarize the regex you will be describing and what you will explain. Include a code snippet of the regex. Replace this text with your summary.
+  This regex is used to identify and validate URLs. Including the verification of the protocol, domain, and path. It offers flexibility by accommodating URLs with or without a specified protocol (http or https).
 
 ## Table of Contents
 
@@ -20,21 +20,43 @@ Briefly summarize the regex you will be describing and what you will explain. In
 ## Regex Components
 
 ### Anchors
+The regex makes use of "^" and "$" anchors to ensure that the entire string is matched, validating the URL from start to finish.
 
 ### Quantifiers
+The question mark (?) following (https?:\/\/) indicates that this section is optional, allowing URLs to be validated with or without a specified protocol (http or https). 
+For example, the URL can have "http://" or "https://" or in some cases not at all.
 
 ### Grouping Constructs
+- (https?:\/\/)?: This part matches the protocol (http or https) and is optional.
+
+- ([\da-z\.-]+): This part captures the domain name. It allows for alphanumeric characters, dots, and hyphens.
+
+- \.([a-z\.]{2,6}): This captures the top-level domain (TLD). (ex: ".com", ".org", etc.)
+
+- ([\/\w \.-]*)*: This part captures the path, which can be a mix of letters, numbers, slashes, spaces, dots, and hyphens.
+
+- \/?$: This makes sure that the path ends with a slash if it's there, but is also optional.
 
 ### Bracket Expressions
+[\da-z\.-]: This expression matches alphanumeric characters, dots, and hyphens in the domain name.
 
 ### Character Classes
+\d: This matches numbers.
+\w: This matches word characters (alphanumeric + underscore).
 
 ### The OR Operator
+https?: The ? makes the 's' in 'https' optional, allowing for both http and https.
 
 ### Flags
+No flags are used in this regex.
 
 ### Character Escapes
+No special characters need to be escaped in this check.
 
 ## Author
 
-A short section about the author with a link to the author's GitHub profile (replace with your information and a link to your profile)
+Jake Preciado
+
+GitHub: https://github.com/jmpre28
+Email: jacobpreciado@gmail.com
+
